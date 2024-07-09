@@ -162,6 +162,12 @@ $(document).ready(function () {
     $('#openTaskModalButton').on('click', function () {
         $('#taskModal').modal('show');
     });
+    $('#xModal').on('click', function () {
+        $('#taskModal').modal('hide');
+    });
+    $('#closeModal').on('click', function () {
+        $('#taskModal').modal('hide');
+    });
 
     $('#saveTask').on('click', function (e) {
         e.preventDefault();
