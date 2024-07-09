@@ -70,13 +70,13 @@ function createTaskCard(task) {
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
     const tasks = getTasksfromStorage();
-    const todoList = $('#todo');
+    const todoList = $('#todo-cards');
     todoList.empty();
 
-    const inProgressList = $('#in-progress');
+    const inProgressList = $('#in-progress-cards');
     inProgressList.empty();
 
-    const doneList = $('#done');
+    const doneList = $('#done-cards');
     doneList.empty();
 
     if (tasks) {
@@ -136,7 +136,7 @@ function handleAddTask(event){
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(id){
    const tasks = getTasksfromStorage();
-   const newTasks = tasks.filter(t => !(t.id === id))
+   const newTasks = tasks.filter(t => !(t && t.id && t.id === id))
    saveTaskstoStorage(newTasks);
    renderTaskList();
 }
